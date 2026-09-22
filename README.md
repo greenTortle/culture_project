@@ -1,6 +1,3 @@
-# culture_project
-Agent-based simulation of community culture, driven by adaptive polling and social-interaction dynamics.
-
 # Line — Community Culture Lab
 
 A model of how a community's culture forms and shifts over time. A dynamic front-end poll locates each person on a −12…+12 moral spectrum per category (alcohol/drugs, personality, Biblical practices, sex, extracurriculars), and a back-end simulation lets those people meet, cluster, and pull on one another's positions over a simulated season.
