@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0d0b;
+  --color-surface: #151613;
+  --color-raised: #1c1e19;
+  --color-fg: #eceae3;
+  --color-muted: #8f8e86;
+  --color-faint: #6a6a63;
+  --color-border: #2a2c26;
+  --color-accent: #9aab8a;
+  --color-accent-fg: #0c0d0b;
+  --color-warn: #c4a574;
+  --color-warn-fg: #1a140c;
+  --color-neg: #c17a62;
+  --color-pos: #8fad7a;
+  /* Diverging pair for the category-shift bars: warm/cool poles either side of a
+     neutral (bg-raised) zero line. */
+  --color-shift-down: #cf5b48;
+  --color-shift-up: #8fad7a;
+  --color-filler: #3a3424;
+  --color-filler-fg: #e6d7a8;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  /* Number fields here are typed into, not stepped through. The spinner arrows
+     only appear on hover, shift the value sideways when they do, and step by the
+     wrong amount for every field we use. */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
